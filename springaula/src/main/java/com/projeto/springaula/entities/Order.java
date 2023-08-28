@@ -5,6 +5,7 @@ import java.time.Instant;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.projeto.springaula.entities.enums.OrderStatus;
 
 import jakarta.persistence.Entity;
@@ -29,6 +30,7 @@ public class Order implements Serializable{
 	
 	private Integer orderStatus;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "cliente_id")
 	private User client;
